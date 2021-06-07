@@ -1,0 +1,43 @@
+lavalink:
+  server:
+    koe:
+      bufferDurationMs: 400
+      byteBufAllocator: default
+      highPacketPriority: true
+      useEpoll: true
+    lavaplayer:
+      frameBufferDuration: 5000
+      gc-warnings: true
+      nonAllocating: false
+      soundcloudSearchEnabled: true
+      youtubePlaylistLoadLimit: 6
+      youtubeSearchEnabled: true
+    password: youshallnotpass
+    playerUpdateInterval: 1
+    sources:
+      bandcamp: true
+      http: true
+      local: true
+      mixer: true
+      soundcloud: true
+      twitch: true
+      vimeo: true
+      youtube: true
+logging:
+  file:
+    max-history: 30
+    max-size: 1GB
+  level:
+    lavalink: INFO
+    root: INFO
+  path: ./logs/
+metrics:
+  prometheus:
+    enabled: false
+    endpoint: /metrics
+sentry:
+  dsn: ""
+  environment: ""
+server:
+  address: 0.0.0.0
+  port: 8080
