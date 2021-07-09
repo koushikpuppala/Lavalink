@@ -1,10 +1,10 @@
-FROM openjdk:17
+FROM openjdk:18-jdk-slim
 
 WORKDIR /Lavalink
 
 COPY Lavalink.jar Lavalink.jar
 COPY application.yml application.yml
 
-EXPOSE 8080
+EXPOSE 2333
 
-CMD ["java", "-jar", "Lavalink.jar"]
+ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.3", "-Xmx3G", "-jar", "Lavalink.jar"]
