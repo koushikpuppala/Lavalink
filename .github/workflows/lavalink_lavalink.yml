@@ -12,7 +12,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: lavalink # set this to your function app name on Azure
   PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
-  JAVA_VERSION: '11' # set this to the java version to use
+  JAVA_VERSION: '16' # set this to the java version to use
 
 jobs:
   build-and-deploy:
@@ -28,10 +28,7 @@ jobs:
 
       - name: 'Restore Project Dependencies Using Mvn'
         shell: pwsh
-        run: |
-          pushd './${{ env.PACKAGE_DIRECTORY }}'
-          mvn clean package
-          popd
+        run: java -jar Lavalink.jar
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
