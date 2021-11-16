@@ -26,9 +26,6 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
 
-      - name: 'Restore Project Dependencies Using Mvn'
-        shell: pwsh
-        run: java -jar Lavalink.jar
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
